@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/pp2.0.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+</head>
+<body>
+    <nav>
+        <div class="div_nav1">
+            <a id="navi" href="./">ACCUEIL</a>
+            <a id="navi" href="#"}>EXPERIENCE</a>
+            <a id="navi" class="ici_nav" href="./about.html"><b>A PROPO</b></a>
+            <a id="navi" href="./prix.html">PRIX</a>
+        </div>
+
+        <div class="Div_Logo">
+            <div>
+                <h1 class="title_logo">Mapoto portfolio</h1>
+                <span class="sur_title_logo"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header_home">
+        <div class="first_div_about">
+            <div>
+                <p class="gray_text">HEY COUCOU !</p>
+                <h1>Je suis Mapoto40</h1>
+                <p class="gray_text2">Je suis un développeur et designer Web. <br> J'aime développer et designer des sites Web. <br> J'ai 16 ans et je connais le HTML, CSS, JavaScript, <br> PHP, React.js et node.js. <br> Si vous voulez un site, venez me mp</p>
+            </div>
+            <img src="images/pp_mapoto40.png" alt="">
+        </div>
+    </div>
+
+    <div class="bande_eyes_about">
+        <center>
+            <h1>Je vends mes services donc si vous avez besoin d'un site demandez moi !</h1>
+        </center>
+    </div>
+
+    <div class="content_part2_home">
+        <div class="content2_part2_home">
+            <h1><u>My experience</u></h1>
+            <p class="desc1_home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+
+            <div class="flexbox_exp_home">
+                <div>
+                    <h2>HTML / CSS</h2>
+                    <p>Pour créer un site</p>
+                </div>
+
+                <div>
+                    <h2>JavaScript</h2>
+                    <p>Pour la dinamique des sites</p>
+                </div>
+
+                <div>
+                    <h2>PHP</h2>
+                    <p>Pour la connection a une bdd</p>
+                </div>
+
+                <div>
+                    <h2>Node.js</h2>
+                    <p>Pour des sites fonctionnel</p>
+                </div>
+
+                <div>
+                    <h2>React.js</h2>
+                    <p>Pour des sites plus performant</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="background_form_contact">
+        <div class="separation_content_form_contact">
+            <form id="form" class="width_form_contact">
+                <h2>Want to get in touch with me? <br /> You can drop me a line !</h2>
+                <p class="gray_text">If you prefer to contact me on discord my name is: le criquet#3627</p>
+                
+                    <div class="Div_Flex_form_contact">
+                        <div>
+                            <label>PRENOM</label> <br />
+                            <input name="name_pseudo" id="name_pseudo" type="text" class="input1_name_form_contact" placeholder="Prenom"/>
+                        </div>
+
+                        <div>
+                            <label>PSEUDO DISCORD + TAG</label> <br />
+                            <input id="email_user" name="email_user" type="text" class="input1_name_form_contact" placeholder="Pseudo Disord + tag"/>
+                        </div>
+                    </div> 
+
+                <div class="padding_form_contact">
+                    <label>Votre message</label> <br />
+                    <textarea id="message" name="message" class="textarea2_name_form_contact" placeholder="Blablabla bla bla blabla..."></textarea>
+                </div>
+                    
+                <button value="send" id="button" type="submit">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+
+    <div class='Div_flex_footer'>
+        <p class='text_bymapoto_footer gray_text'>By mapoto40</p>
+
+        <div>
+            <p class='gray_text'>le criquet#3627</p>
+            <p class='gray_text'>Instagram</p>
+            <p class='gray_text'>TikTok</p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('XCsNEbGLUuZUiG4l_')
+    </script>
+    <script>
+        document.getElementById('form').addEventListener('submit', 
+            function(e){
+                e.preventDefault();
+                document.getElementById('button').innerHTML = "Sending..."
+                
+                const serviceID = 'default_service'
+                const templateID = 'template_3lc2akp'
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        alert('Votre mail a été envoyer !');
+                        location.reload()
+                    }), (err) => {
+                        alert(JSON.stringify(err));
+                    };
+            }
+        )
+
+    </script>
+
+</body>
+</html>
