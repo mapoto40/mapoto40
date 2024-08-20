@@ -23,6 +23,7 @@ Today, at 18 years old, I have been working professionally in the industry for a
 - **Next.js**
 - **Express**
 - **Node.js**
+- **MongoDB**
 
 ## 🌱 What's Next?
 
