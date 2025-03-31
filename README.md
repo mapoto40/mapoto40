@@ -34,7 +34,7 @@ I am always eager to expand my knowledge and take on new challenges. As I prepar
 If you'd like to collaborate on a project, discuss web development, or just say hi, feel free to reach out to me:
 
 - **Discord**: `le_criquet`
-- **Email**: [mapoto40@gmail.com](mailto:mapoto40@gmail.com)
+- **Email**: [matteo@prochedemoi.fr](mailto:matteo@prochedemoi.fr)
 
 ---
 *“The only limit to our realization of tomorrow is our doubts of today.”* - Franklin D. Roosevelt
