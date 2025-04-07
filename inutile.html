@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUCOU Animé</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        @keyframes rainbow {
+            0% { color: red; }
+            14% { color: orange; }
+            28% { color: yellow; }
+            42% { color: green; }
+            57% { color: blue; }
+            71% { color: indigo; }
+            85% { color: violet; }
+            100% { color: red; }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+            20%, 40%, 60%, 80% { transform: translateX(10px); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .rainbow-text {
+            animation: rainbow 3s linear infinite, shake 0.5s ease infinite;
+        }
+        
+        .float-letter {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .spin-letter {
+            display: inline-block;
+            animation: spin 2s linear infinite;
+        }
+        
+        .pulse-letter {
+            display: inline-block;
+            animation: pulse 1.5s ease infinite;
+        }
+        
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: firework 1s ease-out;
+            opacity: 0;
+        }
+        
+        @keyframes firework {
+            0% { transform: translate(0, 0); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-black min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <div class="relative">
+        <h1 class="text-9xl font-extrabold text-center mb-20 rainbow-text">
+            <span class="float-letter" style="animation-delay: 0s">C</span>
+            <span class="spin-letter" style="animation-delay: 0.2s">O</span>
+            <span class="pulse-letter" style="animation-delay: 0.4s">U</span>
+            <span class="float-letter" style="animation-delay: 0.6s">C</span>
+            <span class="spin-letter" style="animation-delay: 0.8s">O</span>
+            <span class="pulse-letter" style="animation-delay: 1s">U</span>
+        </h1>
+        
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="animate__animated animate__bounceInDown animate__infinite animate__slower text-yellow-300 text-6xl opacity-30">COUCOU</div>
+        </div>
+    </div>
+    
+    <div class="mt-10 text-white text-center">
+        <p class="animate__animated animate__flash animate__infinite animate__slower">Regarde toutes ces animations inutiles !</p>
+    </div>
+    
+    <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+        <button id="moreAnimBtn" class="px-6 py-3 bg-purple-600 text-white rounded-full font-bold hover:bg-purple-700 transition-all animate__animated animate__pulse animate__infinite">
+            Encore plus d'animations !
+        </button>
+    </div>
+    
+    <script>
+        document.getElementById('moreAnimBtn').addEventListener('click', function() {
+            for (let i = 0; i < 50; i++) {
+                createFirework();
+            }
+            
+            this.classList.add('animate__rubberBand');
+            setTimeout(() => {
+                this.classList.remove('animate__rubberBand');
+            }, 1000);
+            
+            const letters = document.querySelectorAll('h1 span');
+            letters.forEach(letter => {
+                letter.style.animation = 'spin 1s linear';
+                setTimeout(() => {
+                    letter.style.animation = '';
+                }, 1000);
+            });
+        });
+        
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            
+            const x = Math.random() * 600 - 300;
+            const y = Math.random() * 300 - 150;
+            
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            firework.style.backgroundColor = color;
+            firework.style.left = '50%';
+            firework.style.top = '50%';
+            firework.style.setProperty('--tx', `${x}px`);
+            firework.style.setProperty('--ty', `${y}px`);
+            
+            document.body.appendChild(firework);
+            
+            setTimeout(() => {
+                firework.remove();
+            }, 1000);
+        }
+        
+        setInterval(() => {
+            const letters = document.querySelectorAll('h1 span');
+            letters.forEach(letter => {
+                letter.classList.toggle('animate__swing');
+            });
+        }, 3000);
+    </script>
+</body>
+</html>

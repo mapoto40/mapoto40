@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mattéo Lafraise | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #f9fafb 0%, #f1f5f9 100%);
+        }
+
+        .profile-img {
+            border: 4px solid white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-text {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 600;
+        }
+
+        .card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .tech-badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 32px;
+            height: calc(100% - 32px);
+            width: 2px;
+            background-color: #e2e8f0;
+        }
+
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .back-btn {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3), 0 2px 4px -1px rgba(79, 70, 229, 0.2);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.2);
+        }
+    </style>
+    <script>
+        const MAIL_POST = "https://n8n.autopdm.fr/webhook/6e660f5f-fb4f-4f63-b51c-5009fcedad23";
+    </script>
+</head>
+
+<body class="gradient-bg">
+    <aside id="alert" class="fixed top-4 right-4 z-50 hidden bg-white shadow-lg rounded-lg p-4">
+        <div class="flex items-center">
+            <i id="alert-icon" class="fas fa-exclamation-circle text-red-500 mr-2"></i>
+            <span id="alert-message" class="text-sm text-slate-600">Message envoyé avec succès !</span>
+            <button id="close-alert" class="ml-auto text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </aside>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <!-- Back Button -->
+        <a href="index.html"
+            class="back-btn inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg mb-6">
+            <i class="fas fa-arrow-left mr-2"></i> Retour
+        </a>
+
+        <!-- Header Section -->
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
+            <div class="w-40 h-40 rounded-full overflow-hidden bg-white p-1 floating">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQEpQhwHkAevFQ/profile-displayphoto-shrink_200_200/B4DZXNWpIkHYAc-/0/1742907021206?e=1749686400&v=beta&t=md6Cx_WpfNzgQ9jriUhQE0GGqv3sOnE-gMZ3xAxfYLc"
+                    alt="Mattéo Lafraise" class="profile-img w-full h-full object-cover rounded-full">
+            </div>
+
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-4xl font-bold mb-2">Mattéo Lafraise</h1>
+                <h2 class="text-xl text-slate-600 mb-4">Développeur Full-Stack & CTO @ <span
+                        class="highlight-text">Proche de Moi</span></h2>
+
+                <p class="text-slate-600 mb-6 max-w-2xl">
+                    Je suis un passionné de code — j’adore développer, créer et SURTOUT automatiser 💻🔥<br>
+                    Actuellement, je renforce mes compétences en <span class="font-medium">C</span> pour le bas niveau
+                    et en <span class="font-medium">TypeScript</span> pour des projets solides côté front et back.
+                </p>
+
+                <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                    <a href="https://github.com/mapoto40" target="_blank"
+                        class="flex items-center px-4 py-2 bg-gray-800 text-white rounded-lg">
+                        <i class="fab fa-github mr-2"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/matteo-lafraise" target="_blank"
+                        class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg">
+                        <i class="fab fa-linkedin-in mr-2"></i> LinkedIn
+                    </a>
+                    <a href="mailto:matteo@prochedemoi.fr"
+                        class="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg">
+                        <i class="fas fa-envelope mr-2"></i> Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-user"></i>
+                </span>
+                À propos de moi
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-3 text-indigo-600">Mon parcours</h3>
+                    <p class="text-slate-600 mb-4">
+                        Autodidacte depuis l’âge de 15 ans, j’ai appris à coder en créant des projets concrets orientés
+                        produit et impact.
+                        J’ai toujours privilégié la pratique, l’autonomie et l’efficacité 💻⚡
+                    </p>
+                    <p class="text-slate-600">
+                        Aujourd’hui à 19 ans, je suis <span class="font-medium">CTO et co-fondateur</span> de
+                        <a href="https://prochedemoi.fr" class="font-bold text-blue-500">Proche de Moi</a>, une
+                        plateforme qui booste la visibilité locale des commerces 📍🚀
+                    </p>
+                </div>
+
+                <div class="card bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-3 text-indigo-600">Mes objectifs</h3>
+                    <p class="text-slate-600 mb-4">
+                        En tant que <span class="font-medium">CTO de Proche de Moi</span>, je conçois des solutions
+                        digitales simples, utiles et automatisées pour les commerces de proximité 🛠️📍
+                    </p>
+                    <p class="text-slate-600">
+                        Je me spécialise activement dans l'<span class="font-medium">automatisation avancée</span> avec
+                        des outils comme <span class="font-medium">n8n</span>, pour créer des systèmes efficaces,
+                        scalables et sans friction ⚡
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-code"></i>
+                </span>
+                Compétences techniques
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Frontend -->
+                <div class="card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold">Frontend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge bg-blue-100 text-blue-800">HTML</span>
+                        <span class="tech-badge bg-blue-100 text-blue-800">CSS</span>
+                        <span class="tech-badge bg-blue-100 text-blue-800">JavaScript</span>
+                        <span class="tech-badge bg-blue-100 text-blue-800">TypeScript</span>
+                        <span class="tech-badge bg-blue-100 text-blue-800">React</span>
+                        <span class="tech-badge bg-blue-100 text-blue-800">Next.js</span>
+                        <span class="tech-badge bg-blue-100 text-blue-800">TailwindCSS</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold">Backend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge bg-purple-100 text-purple-800">Node.js</span>
+                        <span class="tech-badge bg-purple-100 text-purple-800">Express</span>
+                        <span class="tech-badge bg-purple-100 text-purple-800">Python</span>
+                        <span class="tech-badge bg-purple-100 text-purple-800">C</span>
+                        <span class="tech-badge bg-purple-100 text-purple-800">MongoDB</span>
+                        <span class="tech-badge bg-purple-100 text-purple-800">PostgreSQL</span>
+                        <span class="tech-badge bg-purple-100 text-purple-800">API REST</span>
+                        <span class="tech-badge bg-purple-100 text-purple-800">Webhooks</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="card bg-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold">Outils & autres</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge bg-green-100 text-green-800">n8n</span>
+                        <span class="tech-badge bg-green-100 text-green-800">Make (ex-Integromat)</span>
+                        <span class="tech-badge bg-green-100 text-green-800">Git</span>
+                        <span class="tech-badge bg-green-100 text-green-800">Docker</span>
+                        <span class="tech-badge bg-green-100 text-green-800">Figma</span>
+                        <span class="tech-badge bg-green-100 text-green-800">Linux</span>
+                        <span class="tech-badge bg-green-100 text-green-800">IA générative</span>
+                        <span class="tech-badge bg-green-100 text-green-800">SEO local</span>
+                        <span class="tech-badge bg-green-100 text-green-800">Notion API</span>
+                        <span class="tech-badge bg-green-100 text-green-800">Web scraping</span>
+                        <span class="tech-badge bg-green-100 text-green-800">Automatisation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-project-diagram"></i>
+                </span>
+                Mes projets
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Proche de Moi -->
+                <div class="card bg-white p-6 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div
+                            class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-store-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">Proche de Moi</h3>
+                            <p class="text-sm text-slate-500">Plateforme pour commerces de proximité</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        Solution clé en main pour booster la visibilité locale des commerces : site vitrine, SEO,
+                        visite virtuelle, outils de réservation et de gestion.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge bg-indigo-100 text-indigo-800">Next.js</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800">Node.js</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800">MongoDB</span>
+                        <span class="tech-badge bg-indigo-100 text-indigo-800">TailwindCSS</span>
+                    </div>
+                    <a href="https://prochedemoi.fr" target="_blank"
+                        class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                        Visiter le site <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Eos Crawler -->
+                <div class="card bg-white p-6 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div
+                            class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold">Eos Crawler</h3>
+                            <p class="text-sm text-slate-500">Outil de prospection intelligente</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 mb-4">
+                        Crawler conçu pour identifier des entreprises selon des critères avancés (date de création,
+                        statut,
+                        nombre de salariés, co-dirigeants, horaires, budget OPCO, etc).
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge bg-yellow-100 text-yellow-800">Python</span>
+                        <span class="tech-badge bg-yellow-100 text-yellow-800">C</span>
+                        <span class="tech-badge bg-yellow-100 text-yellow-800">Typescript</span>
+                        <span class="tech-badge bg-yellow-100 text-yellow-800">Web Scraping</span>
+                        <span class="tech-badge bg-yellow-100 text-yellow-800">Automation</span>
+                        <span class="tech-badge bg-yellow-100 text-yellow-800">n8n</span>
+                        <span class="tech-badge bg-yellow-100 text-yellow-800">API INSEE</span>
+                    </div>
+                    <span class="text-yellow-600 font-medium inline-flex items-center">
+                        En cours de lancement <i class="fas fa-hourglass-half ml-2"></i>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-history"></i>
+                </span>
+                Mon parcours
+            </h2>
+
+            <div class="space-y-6">
+                <!-- CTO -->
+                <div class="timeline-item relative pl-8">
+                    <div
+                        class="absolute left-0 top-0 w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-circle text-xs"></i>
+                    </div>
+                    <div class="card bg-white p-6 rounded-lg">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-lg font-semibold">CTO & Associé</h3>
+                            <span class="text-sm text-slate-500">2025 - Présent</span>
+                        </div>
+                        <p class="text-slate-600 mb-2">Proche de Moi</p>
+                        <p class="text-slate-600">
+                            Direction technique, automatisation des workflows, création de produits web, vision
+                            stratégique long terme.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Alternance -->
+                <div class="timeline-item relative pl-8">
+                    <div
+                        class="absolute left-0 top-0 w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-circle text-xs"></i>
+                    </div>
+                    <div class="card bg-white p-6 rounded-lg">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-lg font-semibold">Alternant Développeur Full-Stack</h3>
+                            <span class="text-sm text-slate-500">2023 - 2024</span>
+                        </div>
+                        <p class="text-slate-600 mb-2">Proche de Moi</p>
+                        <p class="text-slate-600">
+                            Participation au développement complet de la plateforme : frontend, backend, SEO, outils
+                            internes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Stage -->
+                <div class="timeline-item relative pl-8">
+                    <div
+                        class="absolute left-0 top-0 w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-circle text-xs"></i>
+                    </div>
+                    <div class="card bg-white p-6 rounded-lg">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-lg font-semibold">Stage Développement Web</h3>
+                            <span class="text-sm text-slate-500">2022</span>
+                        </div>
+                        <p class="text-slate-600 mb-2">Proche de Moi</p>
+                        <p class="text-slate-600">
+                            Premier contact pro avec le développement web : création de modules, intégration et
+                            accompagnement client.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Lycée EPIL -->
+                <div class="timeline-item relative pl-8">
+                    <div
+                        class="absolute left-0 top-0 w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-circle text-xs"></i>
+                    </div>
+                    <div class="card bg-white p-6 rounded-lg">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-lg font-semibold">Bac pro RISC</h3>
+                            <span class="text-sm text-slate-500">2020 - 2023</span>
+                        </div>
+                        <p class="text-slate-600 mb-2">EPIL - Groupe OEC (Lille)</p>
+                        <p class="text-slate-600">
+                            Réseaux, systèmes, cybersécurité et projets de développement en parallèle. Début de mes
+                            expériences pro en dev.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Débuts -->
+                <div class="timeline-item relative pl-8">
+                    <div
+                        class="absolute left-0 top-0 w-6 h-6 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-circle text-xs"></i>
+                    </div>
+                    <div class="card bg-white p-6 rounded-lg">
+                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <h3 class="text-lg font-semibold">Débuts en programmation</h3>
+                            <span class="text-sm text-slate-500">2019 - 2021</span>
+                        </div>
+                        <p class="text-slate-600 mb-2">Autodidacte</p>
+                        <p class="text-slate-600">
+                            Premiers sites, petits bots, scripts perso… j’ai appris à coder seul, par passion, en créant
+                            des projets concrets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-8 h-8 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-paper-plane"></i>
+                </span>
+                Contact
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Coordonnées -->
+                <div class="card bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-indigo-600">Me contacter</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email</h4>
+                                <a href="mailto:matteo@prochedemoi.fr"
+                                    class="text-slate-600 hover:text-indigo-600">matteo@prochedemoi.fr</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">LinkedIn</h4>
+                                <a href="https://linkedin.com/in/matteo-lafraise" target="_blank"
+                                    class="text-slate-600 hover:text-blue-600">linkedin.com/in/matteo-lafraise</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 bg-gray-800 text-white rounded-lg flex items-center justify-center mr-4">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">GitHub</h4>
+                                <a href="https://github.com/mapoto40" target="_blank"
+                                    class="text-slate-600 hover:text-gray-800">github.com/mapoto40</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fab fa-discord"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Discord</h4>
+                                <p class="text-slate-600">le_criquet</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div
+                                class="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Téléphone</h4>
+                                <p class="text-slate-600">06 52 82 25 94</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulaire -->
+                <div class="card bg-white p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-indigo-600">Formulaire de contact</h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-600 mb-1">Nom</label>
+                            <input type="text" id="name" name="name"
+                                class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
+                                required>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-600 mb-1">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
+                                required>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-600 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Envoyer
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-slate-500 text-sm py-8 border-t border-slate-200">
+            <p>© 2023 Mattéo Lafraise. Tous droits réservés.</p>
+            <p class="mt-2">Développé avec <i class="fas fa-heart text-red-400"></i> et <i
+                    class="fas fa-coffee text-amber-600"></i></p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.5s ease';
+                    item.style.opacity = '1';
+                }, (cards.length + index) * 100);
+            });
+
+            function showAlert(message, isError = false) {
+                const alert = document.getElementById('alert');
+                const alertMessage = document.getElementById('alert-message');
+                const alertIcon = document.getElementById('alert-icon');
+
+                alertMessage.textContent = message;
+
+                if (isError) {
+                    alertIcon.className = "fas fa-exclamation-circle text-red-500 mr-2";
+                    alertMessage.classList.add("text-red-500");
+                } else {
+                    alertIcon.className = "fas fa-check-circle text-green-500 mr-2";
+                    alertMessage.classList.remove("text-red-500");
+                }
+
+                alert.classList.remove('hidden');
+                alert.classList.add('block');
+
+                setTimeout(() => {
+                    alert.classList.add('hidden');
+                    alert.classList.remove('block');
+                }, 6000);
+            }
+
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const message = document.getElementById('message').value;
+
+                    try {
+                        const response = await fetch(MAIL_POST, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({ name, email, message })
+                        });
+
+                        if (!response.ok) throw new Error("Erreur réseau");
+
+                        showAlert("Message envoyé avec succès !");
+                    } catch (error) {
+                        console.error(error);
+                        showAlert("Erreur lors de l'envoi du message.", true);
+                    }
+
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
