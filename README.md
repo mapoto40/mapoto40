@@ -1,40 +1,59 @@
-# 👋 Hi, I'm Mattéo L!
+# 👋 Salut, moi c’est Mattéo L!
 
-## 🧑‍💻 About Me
+## 🧑‍💻 À propos
 
-My journey into the world of programming began at the age of 15 when I received my first computer. Since then, I've been passionate about web development, and over the past few years, I have honed my skills to become a proficient full-stack developer.
+Développeur full-stack passionné depuis mes 15 ans, j’ai appris à coder en autodidacte, en créant des projets concrets orientés produit et impact.  
+Aujourd’hui, à 19 ans, je suis **CTO & co-fondateur de [Proche de Moi](https://prochedemoi.fr)**, une plateforme qui aide les commerces de proximité à se digitaliser efficacement.
 
-Today, at 18 years old, I have been working professionally in the industry for a year, continuously learning and improving my craft. Next year, I will continue to gain experience in the workplace before pursuing further education at **[École 42](https://www.42.fr/)**, a highly renowned coding school.
+J’adore **coder**, **automatiser** et **transformer des idées en solutions utiles**. Mon objectif : construire des systèmes simples, puissants et scalables.  
 
-## 🚀 Current Projects
+## 🚀 Projets en cours
 
-- **Eos**: I'm currently working on Eos, a SaaS project focused on business management. The project is nearing completion, and I’m excited to launch it soon!
+- **Proche de Moi** – Solution complète pour booster la visibilité locale des commerces (site vitrine, SEO local, visite virtuelle, réservation, etc.).
+- **Eos Crawler** – Outil de prospection intelligente qui détecte automatiquement des entreprises selon des critères avancés (statut, nombre de salariés, horaires, OPCO…).
 
-## 💻 Tech Stack
+## 💻 Stack actuelle
 
-### Languages
+### Langages
 - **HTML/CSS**
-- **JavaScript/TypeScript**
+- **JavaScript / TypeScript**
 - **Python**
-- **C++**
+- **C**
 
-### Frameworks & Tools
+### Frameworks & bibliothèques
 - **React**
 - **Next.js**
 - **Express**
 - **Node.js**
+- **TailwindCSS**
+
+### Bases de données
 - **MongoDB**
+- **PostgreSQL**
 
-## 🌱 What's Next?
+### Outils & écosystème
+- **n8n**, **Make (Integromat)**
+- **Git & GitHub**
+- **Docker**
+- **Linux**
+- **Figma**
+- **Web Scraping**
+- **Notion API**
+- **Automation**
+- **SEO local**
+- **IA générative**
 
-I am always eager to expand my knowledge and take on new challenges. As I prepare to transition to École 42, I look forward to collaborating with other talented individuals and building innovative projects that make an impact.
+## 🧠 En ce moment ?
 
-## 📫 Let's Connect!
+Je renforce mes compétences bas niveau en **C** et continue à structurer des workflows complexes avec **n8n**. J’aime ce qui est simple, rapide et automatisable.
 
-If you'd like to collaborate on a project, discuss web development, or just say hi, feel free to reach out to me:
+## 📫 Me contacter
 
-- **Discord**: `le_criquet`
-- **Email**: [matteo@prochedemoi.fr](mailto:matteo@prochedemoi.fr)
+- **Email** : [matteo@prochedemoi.fr](mailto:matteo@prochedemoi.fr)  
+- **Discord** : `le_criquet`  
+- **LinkedIn** : [linkedin.com/in/matteo-lafraise](https://linkedin.com/in/matteo-lafraise)  
+- **GitHub** : [github.com/mapoto40](https://github.com/mapoto40)
 
 ---
-*“The only limit to our realization of tomorrow is our doubts of today.”* - Franklin D. Roosevelt
+
+> *“Créer des outils utiles, beaux et automatisés — c’est ma façon de faire du dev une force locale.”* 🚀
