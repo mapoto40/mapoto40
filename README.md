@@ -1,59 +1,35 @@
-# 👋 Salut, moi c’est Mattéo L!
+# 👋 Salut, moi c'est Mattéo L!
 
 ## 🧑‍💻 À propos
 
-Développeur full-stack passionné depuis mes 15 ans, j’ai appris à coder en autodidacte, en créant des projets concrets orientés produit et impact.  
-Aujourd’hui, à 19 ans, je suis **CTO & co-fondateur de [Proche de Moi](https://prochedemoi.fr)**, une plateforme qui aide les commerces de proximité à se digitaliser efficacement.
+Développeur full-stack passionné depuis mes 15 ans, j'aime créer des systèmes **simples, puissants et automatisés**.  
+Je suis aujourd'hui **CTO & co-fondateur de [HubLocal](https://hublocal.fr)** - la carte d'identité numérique des pros et entreprises locales.  
 
-J’adore **coder**, **automatiser** et **transformer des idées en solutions utiles**. Mon objectif : construire des systèmes simples, puissants et scalables.  
+Je construis des outils utiles qui **centralisent, automatisent et connectent** les acteurs locaux sans complexité ni dépendance technique.
 
-## 🚀 Projets en cours
+## 🚀 Ce que je fais
 
-- **Proche de Moi** – Solution complète pour booster la visibilité locale des commerces (site vitrine, SEO local, visite virtuelle, réservation, etc.).
-- **Eos Crawler** – Outil de prospection intelligente qui détecte automatiquement des entreprises selon des critères avancés (statut, nombre de salariés, horaires, OPCO…).
+- **HubLocal** - Plateforme tout-en-un pour gérer sa visibilité locale : fiche pro dynamique, SEO, QR code, carte NFC, modules interactifs...  
+- **Automatisation n8n** - Je conçois des workflows complets reliant CRM, paiements, SEO, emails et analytics, pour supprimer les tâches manuelles.
 
 ## 💻 Stack actuelle
 
-### Langages
-- **HTML/CSS**
-- **JavaScript / TypeScript**
-- **Python**
-- **C**
+- **Langages** : TypeScript, JavaScript, Python  
+- **Frameworks** : Next.js, React, Express  
+- **Base de données** : MongoDB, Prisma  
+- **Outils** : n8n, GitHub, Figma  
 
-### Frameworks & bibliothèques
-- **React**
-- **Next.js**
-- **Express**
-- **Node.js**
-- **TailwindCSS**
+## 🧩 Ce qui me passionne
 
-### Bases de données
-- **MongoDB**
-- **PostgreSQL**
-
-### Outils & écosystème
-- **n8n**, **Make (Integromat)**
-- **Git & GitHub**
-- **Docker**
-- **Linux**
-- **Figma**
-- **Web Scraping**
-- **Notion API**
-- **Automation**
-- **SEO local**
-- **IA générative**
-
-## 🧠 En ce moment ?
-
-Je renforce mes compétences bas niveau en **C** et continue à structurer des workflows complexes avec **n8n**. J’aime ce qui est simple, rapide et automatisable.
+L'**automatisation intelligente**, l'**expérience produit**, et tout ce qui rend la tech **invisible mais essentielle**.  
+Je vise des projets robustes, scalables et sans friction.
 
 ## 📫 Me contacter
 
-- **Email** : [matteo@prochedemoi.fr](mailto:matteo@prochedemoi.fr)  
-- **Discord** : `le_criquet`  
+- **Email** : [contact@mlafraise.fr](mailto:contact@mlafraise.fr)  
 - **LinkedIn** : [linkedin.com/in/matteo-lafraise](https://linkedin.com/in/matteo-lafraise)  
 - **GitHub** : [github.com/mapoto40](https://github.com/mapoto40)
 
 ---
 
-> *“Créer des outils utiles, beaux et automatisés — c’est ma façon de faire du dev une force locale.”* 🚀
+> *"Un click c'est un clic de trop."*  
