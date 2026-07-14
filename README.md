@@ -1,35 +1,61 @@
-# 👋 Salut, moi c'est Mattéo L!
+# Salut, moi c'est Mattéo Lafraise.
 
-## 🧑‍💻 À propos
+## À propos
 
-Développeur full-stack passionné depuis mes 15 ans, j'aime créer des systèmes **simples, puissants et automatisés**.  
-Je suis aujourd'hui **CTO & co-fondateur de [HubLocal](https://hublocal.fr)** - la carte d'identité numérique des pros et entreprises locales.  
+Développeur full-stack depuis mes 15 ans, je conçois des applications web, des API, des outils métiers et des systèmes automatisés.
 
-Je construis des outils utiles qui **centralisent, automatisent et connectent** les acteurs locaux sans complexité ni dépendance technique.
+Je suis aujourd'hui **CTO et cofondateur de [HubSuite](https://hubsuite.fr)**. J'ai également développé, maintenu et fait évoluer de nombreux projets pour des entreprises et des clients aux besoins variés.
 
-## 🚀 Ce que je fais
+Certaines des missions que j'ai réalisées sont disponibles sur [mlafraise.fr/missions](https://www.mlafraise.fr/missions).
 
-- **HubLocal** - Plateforme tout-en-un pour gérer sa visibilité locale : fiche pro dynamique, SEO, QR code, carte NFC, modules interactifs...  
-- **Automatisation n8n** - Je conçois des workflows complets reliant CRM, paiements, SEO, emails et analytics, pour supprimer les tâches manuelles.
+Je travaille sur l'ensemble d'un projet, de l'architecture technique au déploiement, en passant par le développement front-end, back-end, les bases de données et l'infrastructure.
 
-## 💻 Stack actuelle
+## Ce que je développe
 
-- **Langages** : TypeScript, JavaScript, Python  
-- **Frameworks** : Next.js, React, Express  
-- **Base de données** : MongoDB, Prisma  
-- **Outils** : n8n, GitHub, Figma  
+* Applications web sur mesure
+* API REST et services back-end
+* Interfaces d'administration et espaces clients
+* Systèmes d'authentification et de permissions
+* Fonctionnalités en temps réel
+* Automatisations avec n8n
+* Intégrations avec des services externes
+* Infrastructures de déploiement et pipelines CI/CD
 
-## 🧩 Ce qui me passionne
+## Stack technique
 
-L'**automatisation intelligente**, l'**expérience produit**, et tout ce qui rend la tech **invisible mais essentielle**.  
-Je vise des projets robustes, scalables et sans friction.
+### Langages
 
-## 📫 Me contacter
+`TypeScript` `JavaScript` `C` `Java` `Python` `SQL`
 
-- **Email** : [contact@mlafraise.fr](mailto:contact@mlafraise.fr)  
-- **LinkedIn** : [linkedin.com/in/matteo-lafraise](https://linkedin.com/in/matteo-lafraise)  
-- **GitHub** : [github.com/mapoto40](https://github.com/mapoto40)
+### Front-end
 
----
+`React` `Next.js` `Vue.js` `Tailwind CSS` `Framer Motion` `Vite`
 
-> *"Un click c'est un clic de trop."*  
+### Back-end
+
+`Node.js` `Express` `NestJS`
+
+### Bases de données
+
+`MongoDB` `PostgreSQL` `MySQL` `SQLite` `Redis` `Prisma`
+
+### Infrastructure et DevOps
+
+`Linux` `Docker` `Nginx` `GitHub Actions` `GitLab CI/CD` `PM2` `Cloud Run` `Vercel` `Coolify`
+
+### Outils
+
+`Git` `GitHub` `GitLab` `n8n` `Postman` `Figma` `Electron`
+
+## Ce qui m'intéresse
+
+L'architecture logicielle, le développement d'outils métiers, l'automatisation, les systèmes temps réel et la création d'applications simples à utiliser, mais solides techniquement.
+
+## Me contacter
+
+* [mlafraise.fr/contact](https://www.mlafraise.fr/contact)
+* [contact@mlafraise.fr](mailto:contact@mlafraise.fr)
+* [LinkedIn](https://linkedin.com/in/matteo-lafraise)
+* [GitHub](https://github.com/mapoto40)
+
+> « Un clic, c'est un clic de trop. »
